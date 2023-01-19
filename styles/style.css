@@ -1,0 +1,285 @@
+@charset "UTF-8";
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+
+/* Josh Comeau's CSS Reset */
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  3. Allow percentage-based heights in the application
+*/
+html,
+body {
+  height: 100%;
+}
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  6. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  7. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+  8. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/*
+  9. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* Colors and Fonts */
+
+:root {
+  /* ### Primary */
+
+  --Lime-Green: hsl(163, 72%, 41%);
+  --Bright-Red: hsl(356, 69%, 56%);
+
+  --Facebook: hsl(208, 92%, 53%);
+  --Twitter: hsl(203, 89%, 53%);
+
+  /* Instagram Linear gradient */
+
+  --Instagram1: hsl(37, 97%, 70%);
+  --Instagram2: hsl(329, 70%, 58%);
+  --YouTube: hsl(348, 97%, 39%);
+
+  /* Light Theme Neutral */
+
+  --White: hsl(0, 0%, 100%); /* BG */
+  --Very-Pale-Blue: hsl(225, 100%, 98%); /* Top BG Pattern */
+  --Light-Grayish-Blue: hsl(227, 47%, 96%); /* Card BG */
+  --Dark-Grayish-Blue: hsl(228, 12%, 44%); /* Text */
+  --Very-Dark-Blue: hsl(230, 17%, 14%); /* Text */
+
+  /* Light Theme toggle */
+
+  --Toggle-Light: hsl(230, 22%, 74%);
+
+  /* Dark Theme Neutral */
+
+  --Very-Dark-Blue: hsl(230, 17%, 14%); /* BG */
+  --Very-Dark-Blue: hsl(232, 19%, 15%); /* Top BG Pattern */
+  --Dark-Desaturated-Blue: hsl(228, 28%, 20%); /* Card BG */
+  --Desaturated-Blue: hsl(228, 34%, 66%); /* Text */
+  --White: hsl(0, 0%, 100%); /* Text */
+
+  --ff-regular: "Inter", sans-serif;
+  --fw-regular: 400;
+  --fw-bold: 700;
+}
+
+/* General Settings Light Theme */
+
+body {
+  font-family: var(--ff-regular);
+  font-size: 0.875rem;
+  background-color: var(--Very-Pale-Blue);
+  text-align: center;
+}
+
+.card {
+  padding: 2.5rem 1.5rem;
+}
+
+.card__headings {
+  text-align: left;
+  color: var(--Dark-Grayish-Blue);
+  font-weight: var(--fw-bold);
+}
+
+.card__headings h1 {
+  color: var(--Very-Dark-Blue);
+}
+
+.card__headings p {
+  border-bottom: 1px solid var(--Dark-Grayish-Blue);
+  padding-bottom: 1.125rem;
+}
+
+.main__stats {
+  background-color: var(--Light-Grayish-Blue);
+  display: grid;
+  margin-bottom: 1.5rem;
+  padding: 2rem 0 1.25rem 0;
+  color: var(--Dark-Grayish-Blue);
+  position: relative;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.main__stats::before {
+  content: "";
+  width: 100%;
+  height: 0.25rem;
+  position: absolute;
+  top: 0;
+  display: inline-block;
+}
+
+.main__stats:nth-child(1)::before {
+  background-color: var(--Facebook);
+}
+
+.main__stats:nth-child(2)::before {
+  background-color: var(--Twitter);
+}
+
+.main__stats:nth-child(3)::before {
+  background-image: linear-gradient(
+    to right,
+    var(--Instagram1),
+    var(--Instagram2)
+  );
+}
+
+.main__stats:nth-child(4)::before {
+  background-color: var(--YouTube);
+}
+
+.profile {
+  font-weight: var(--fw-bold);
+  font-size: 0.75rem;
+}
+
+.stats__number {
+  font-size: 3.5rem;
+  color: var(--Very-Dark-Blue);
+  font-weight: var(--fw-bold);
+}
+
+.stats__members {
+  margin-top: -0.5rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.25rem;
+  margin-bottom: 1rem;
+}
+
+.stats__change {
+  font-size: 0.75rem;
+  font-weight: var(--fw-bold);
+}
+
+.increase {
+  color: var(--Lime-Green);
+}
+
+.decrease {
+  color: var(--Bright-Red);
+}
+
+.profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0.6875rem;
+}
+
+.profile::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background: no-repeat center center/cover;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.facebook::before {
+  background-image: url(../images/icon-facebook.svg);
+}
+
+.twitter::before {
+  background-image: url(../images/icon-twitter.svg);
+}
+
+.instagram::before {
+  background-image: url(../images/icon-instagram.svg);
+}
+
+.youtube::before {
+  background-image: url(../images/icon-youtube.svg);
+}
+
+.stats__change {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3125rem;
+}
+
+.stats__change::before {
+  content: "";
+  width: 5px;
+  height: 2.5px;
+  background: no-repeat center center/cover;
+  display: inline-block;
+}
+
+.increase::before {
+  background-image: url(../images/icon-up.svg);
+}
+
+.decrease::before {
+  background-image: url(../images/icon-down.svg);
+}
+
+.card__overview h2 {
+  color: var(--Dark-Grayish-Blue);
+  text-align: left;
+}
+
+.attribution {
+  font-size: 0.6875rem;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
