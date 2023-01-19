@@ -352,7 +352,7 @@ body {
   background-image: url(../images/icon-down.svg);
 }
 
-.card__overview h2 {
+#secondaryHeading {
   color: var(--Dark-Grayish-Blue);
   text-align: left;
   font-size: 1.5rem;
@@ -407,4 +407,64 @@ body {
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+/* Media query for tablets */
+
+@media screen and (min-width: 37.5em) {
+  .card__headings h1 {
+    grid-area: one;
+    font-size: 1.75rem;
+  }
+
+  .card__headings p {
+    border-bottom: unset;
+    grid-area: two;
+  }
+
+  .toggle {
+    grid-area: three;
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+  }
+
+  .card__headings {
+    display: grid;
+    grid-template-areas:
+      "one three"
+      "two three";
+  }
+
+  .card__general {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .card__overview {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+}
+
+/* Media query for desktops */
+
+@media screen and (min-width:70em) {
+  .card {
+    padding: 2.5rem 8.5rem;
+  }
+
+  #secondaryHeading {
+    margin-top: 1rem;
+  }
+
+  .card__headings {
+    margin-bottom: 1.125rem;
+  }
+
+  .card__general, .card__overview {
+    grid-template-columns: repeat(4,1fr);
+  }
 }
