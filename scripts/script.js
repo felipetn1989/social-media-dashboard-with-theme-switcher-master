@@ -20,10 +20,17 @@ function toggleCheck() {
     mainHeading.style.color = "white";
     secondaryHeading.style.color = "white";
 
-    boxToggles.forEach(
-      (boxToggle) =>
-        (boxToggle.style.backgroundColor = "var(--Dark-Desaturated-Blue)")
-    );
+    boxToggles.forEach((boxToggle) => {
+      boxToggle.style.backgroundColor = "var(--Dark-Desaturated-Blue)";
+      boxToggle.addEventListener("mouseover", () => {
+        boxToggle.style.backgroundColor = "#333a56";
+        boxToggle.style.cursor = "pointer";
+      });
+      boxToggle.addEventListener(
+        "mouseout",
+        () => (boxToggle.style.backgroundColor = "var(--Dark-Desaturated-Blue)")
+      );
+    });
 
     textToggles.forEach(
       (textToggle) => (textToggle.style.color = "var(--Desaturated-Blue)")
@@ -39,10 +46,17 @@ function toggleCheck() {
     mainHeading.style.color = "var(--Very-Dark-Blue)";
     secondaryHeading.style.color = "var(--Very-Dark-Blue)";
 
-    boxToggles.forEach(
-      (boxToggle) =>
-        (boxToggle.style.backgroundColor = "var(--Light-Grayish-Blue)")
-    );
+    boxToggles.forEach((boxToggle) => {
+      boxToggle.style.backgroundColor = "var(--Light-Grayish-Blue)";
+      boxToggle.addEventListener("mouseover", () => {
+        boxToggle.style.backgroundColor = "#e1e3f0";
+        boxToggle.style.cursor = "pointer";
+      });
+      boxToggle.addEventListener(
+        "mouseout",
+        () => (boxToggle.style.backgroundColor = "var(--Light-Grayish-Blue)")
+      );
+    });
 
     textToggles.forEach(
       (textToggle) => (textToggle.style.color = "var(--Dark-Grayish-Blue)")
