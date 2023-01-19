@@ -4,17 +4,11 @@ let attribution = document.querySelector(".attribution");
 
 let cardHeadings = document.querySelector(".card__headings");
 
-let mainStatsArray = document.querySelectorAll(".main__stats");
+let boxToggles = document.querySelectorAll(".box_toggle");
 
-let profiles = document.querySelectorAll(".profile");
+let textToggles = document.querySelectorAll(".text_toggle");
 
-let statsNumbers = document.querySelectorAll(".stats__number");
-
-let mainOverviewArray = document.querySelectorAll(".main__overview");
-
-let overviewStatsArray = document.querySelectorAll(".overview__stats");
-
-let overviewNumbers = document.querySelectorAll(".overview__number");
+let numberToggles = document.querySelectorAll(".number_toggle");
 
 toggleSwitch.addEventListener("click", toggleCheck);
 
@@ -26,27 +20,36 @@ function toggleCheck() {
     mainHeading.style.color = "white";
     secondaryHeading.style.color = "white";
 
-    mainStatsArray.forEach((mainStats) => {
-      mainStats.style.backgroundColor = "var(--Dark-Desaturated-Blue)";
-    });
-
-    profiles.forEach(
-      (profile) => (profile.style.color = "var(--Desaturated-Blue)")
+    boxToggles.forEach(
+      (boxToggle) =>
+        (boxToggle.style.backgroundColor = "var(--Dark-Desaturated-Blue)")
     );
 
-    statsNumbers.forEach((number) => (number.style.color = "white"));
-
-    mainOverviewArray.forEach(
-      (mainOverview) =>
-        (mainOverview.style.backgroundColor = "var(--Dark-Desaturated-Blue)")
+    textToggles.forEach(
+      (textToggle) => (textToggle.style.color = "var(--Desaturated-Blue)")
     );
 
-    overviewStatsArray.forEach(
-      (overviewStats) => (overviewStats.style.color = "var(--Desaturated-Blue)")
+    numberToggles.forEach(
+      (numberToggle) => (numberToggle.style.color = "white")
+    );
+  } else {
+    document.body.style.backgroundColor = "var(--Very-Pale-Blue)";
+    attribution.style.color = "var(--Very-Dark-Blue)";
+    cardHeadings.style.color = "var(--Dark-Grayish-Blue)";
+    mainHeading.style.color = "var(--Very-Dark-Blue)";
+    secondaryHeading.style.color = "var(--Very-Dark-Blue)";
+
+    boxToggles.forEach(
+      (boxToggle) =>
+        (boxToggle.style.backgroundColor = "var(--Light-Grayish-Blue)")
     );
 
-    overviewNumbers.forEach(
-      (overviewNumber) => (overviewNumber.style.color = "white")
+    textToggles.forEach(
+      (textToggle) => (textToggle.style.color = "var(--Dark-Grayish-Blue)")
+    );
+
+    numberToggles.forEach(
+      (numberToggle) => (numberToggle.style.color = "var(--Very-Dark-Blue)")
     );
   }
 }
