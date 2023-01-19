@@ -126,7 +126,7 @@ body {
 }
 
 .card {
-  padding: 2.5rem 1.5rem;
+  padding: 2.5rem 1.75rem;
 }
 
 .card__headings {
@@ -223,28 +223,36 @@ body {
   margin-bottom: 0.6875rem;
 }
 
-.profile::before {
+.profile::before,
+.overview__stats::after {
   content: "";
   width: 20px;
   height: 20px;
   background: no-repeat center center/cover;
   display: inline-block;
-  margin-right: 10px;
 }
 
-.facebook::before {
+.profile::before {
+  margin-right: 0.625rem;
+}
+
+.facebook::before,
+.main__overview > .facebook::after {
   background-image: url(../images/icon-facebook.svg);
 }
 
-.twitter::before {
+.twitter::before,
+.main__overview > .twitter::after {
   background-image: url(../images/icon-twitter.svg);
 }
 
-.instagram::before {
+.instagram::before,
+.main__overview > .instagram::after {
   background-image: url(../images/icon-instagram.svg);
 }
 
-.youtube::before {
+.youtube::before,
+.main__overview > .youtube::after {
   background-image: url(../images/icon-youtube.svg);
 }
 
@@ -255,10 +263,11 @@ body {
   gap: 0.3125rem;
 }
 
-.stats__change::before {
+.stats__change::before,
+.overview__change::before {
   content: "";
-  width: 5px;
-  height: 2.5px;
+  width: 0.375rem;
+  height: 0.25rem;
   background: no-repeat center center/cover;
   display: inline-block;
 }
@@ -274,6 +283,50 @@ body {
 .card__overview h2 {
   color: var(--Dark-Grayish-Blue);
   text-align: left;
+  font-size: 1.5rem;
+  margin-bottom: 1.25rem;
+  margin-top: 2.5rem;
+}
+
+.main__overview {
+  background-color: var(--Light-Grayish-Blue);
+  display: grid;
+  grid-template-areas:
+    "one one"
+    "two three";
+  row-gap: 1.5rem;
+  margin-bottom: 1rem;
+  padding: 1.5rem 1.5rem;
+}
+
+.overview__stats {
+  grid-area: one;
+  display: flex;
+  justify-content: space-between;
+  color: var(--Dark-Grayish-Blue);
+  font-weight: var(--fw-bold);
+}
+
+/* I used a line height equal to the font-size so that the span element containing the number would have the same height as the number itself, allowing it to be positioned correcly using the place-self command */
+
+.overview__number {
+  line-height: 2rem;
+  grid-area: two;
+  place-self: end start;
+  color: var(--Very-Dark-Blue);
+  font-size: 2rem;
+  font-weight: var(--fw-bold);
+}
+
+.overview__change {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.375rem;
+  grid-area: three;
+  place-self: end end;
+  font-weight: var(--fw-bold);
+  font-size: 0.75rem;
 }
 
 .attribution {
