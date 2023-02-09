@@ -2,7 +2,11 @@ toggleSwitch.checked = true;
 
 let attribution = document.querySelector(".attribution");
 
+let mainHeading = document.querySelector(".main_heading");
+
 let cardHeadings = document.querySelector(".card__headings");
+
+let secondaryHeading = document.querySelector(".secondary_heading");
 
 let boxToggles = document.querySelectorAll(".box_toggle");
 
